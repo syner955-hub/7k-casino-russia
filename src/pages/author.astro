@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Алексей Морозов — автор и редактор | 7К Казино';
+const description = 'Алексей Морозов — эксперт по онлайн-казино, автор обзоров и аналитических материалов на сайте 7k-casino-russia.it.com.';
+---
+
+<BaseLayout title={title} description={description} canonical="https://7k-casino-russia.it.com/author/">
+  <Header slot="header" />
+
+  <section class="py-10 px-4">
+    <div class="max-w-[800px] mx-auto">
+      <div class="bg-bg-card rounded-xl p-6 border border-border mb-8">
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+          <div class="w-24 h-24 rounded-full bg-gradient-to-b from-accent-red to-accent-red-dark flex items-center justify-center text-white text-3xl font-bold shrink-0">
+            АМ
+          </div>
+          <div>
+            <h1 class="text-xl font-bold text-white mb-2">Алексей Морозов</h1>
+            <p class="text-accent-gold text-sm font-semibold mb-3">Главный редактор · Эксперт по онлайн-казино</p>
+            <p class="text-text-secondary text-sm leading-relaxed">Более 5 лет в индустрии iGaming. Специализируюсь на обзорах онлайн-казино, анализе бонусных программ и платёжных систем. Тестирую условия вывода, проверяю актуальность зеркал и отслеживаю изменения в политике операторов. Все материалы на сайте проходят мою редакторскую проверку перед публикацией.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div>
+          <h2 class="text-lg font-semibold text-accent-gold mb-3">Экспертиза</h2>
+          <ul class="space-y-2 text-text-secondary text-sm">
+            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Анализ бонусных условий и расчёт реальной выгоды вейджера</li>
+            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Тестирование платёжных методов для игроков из РФ</li>
+            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Проверка лицензий и верификация операторов</li>
+            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Мониторинг зеркал и доступности сайтов</li>
+            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Оценка скорости вывода и причин задержек</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-accent-gold mb-3">Редакционный подход</h2>
+          <p class="text-text-secondary text-sm leading-relaxed">Каждый материал на сайте основан на личном опыте взаимодействия с платформой. Я проверяю заявленные условия бонусов, тестирую скорость вывода через разные методы и фиксирую реальные ограничения. Если информация меняется — обновляю страницы в течение 24 часов. Цель — дать читателю конкретные данные для принятия решения, а не рекламные обещания.</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-accent-gold mb-3">Материалы на сайте</h2>
+          <ul class="space-y-2 text-text-secondary text-sm">
+            <li><a href="/" class="text-accent-gold hover:underline">Главная — обзор 7К казино</a></li>
+            <li><a href="/bonusy/" class="text-accent-gold hover:underline">Бонусы — условия и расчёт отыгрыша</a></li>
+            <li><a href="/vyvod-sredstv/" class="text-accent-gold hover:underline">Вывод средств — методы и подводные камни</a></li>
+            <li><a href="/zerkalo/" class="text-accent-gold hover:underline">Зеркала — актуальные ссылки и обход блокировок</a></li>
+            <li><a href="/registraciya/" class="text-accent-gold hover:underline">Регистрация — пошаговая инструкция</a></li>
+            <li><a href="/mobilnoe/" class="text-accent-gold hover:underline">Мобильная версия — сравнение и установка</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-accent-gold mb-3">Контакт</h2>
+          <p class="text-text-secondary text-sm">По вопросам к редакции: <a href="mailto:support@7k-casino-russia.it.com" class="text-accent-gold">support@7k-casino-russia.it.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
