@@ -1,0 +1,13 @@
+---
+const { name, provider, rtp, image, features } = Astro.props;
+const ctaUrl = '/go/';
+---
+
+<div class="bg-bg-card rounded-xl p-4 text-center transition-transform hover:-translate-y-1 group relative">
+  <img src={image} alt={name} class="w-full h-auto rounded-lg mb-3" loading="lazy" width="180" height="180">
+  <a href={ctaUrl} class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-5 py-2 bg-gradient-to-b from-accent-red to-accent-red-dark text-white text-xs font-semibold rounded opacity-0 group-hover:opacity-100 transition-opacity">
+    Играть
+  </a>
+  <p class="text-white text-sm font-semibold">{name}</p>
+  <p class="text-text-dim text-xs mt-1">{provider} · RTP {rtp}</p>
+</div>

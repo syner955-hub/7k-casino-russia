@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #110d0e;
+  --color-bg-card: #1c0d10;
+  --color-bg-card-hover: #2a1418;
+  --color-accent-gold: #f5c66b;
+  --color-accent-red: #cf031c;
+  --color-accent-red-dark: #a91023;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #d1d1d1;
+  --color-text-muted: #c2c2c2;
+  --color-text-dim: #6e6e6e;
+  --color-border: rgba(245, 198, 107, 0.2);
+  --font-family-base: 'Manrope', sans-serif;
+}

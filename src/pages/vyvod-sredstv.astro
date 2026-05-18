@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTA from '../components/CTA.astro';
+import paymentsData from '../data/payments.json';
+
+const title = 'Вывод денег из 7К Казино — методы, сроки, лимиты 2026';
+const description = 'Как вывести деньги из 7К Казино: все методы, лимиты, сроки, комиссии. Верификация, что делать при задержке. Актуальная информация 2026.';
+const ctaUrl = '/go/';
+---
+
+<BaseLayout title={title} description={description} canonical="https://7k-casino-russia.it.com/vyvod-sredstv/">
+  <Header slot="header" />
+
+  <section class="py-10 px-4">
+    <div class="max-w-[900px] mx-auto">
+      <h1 class="text-3xl md:text-4xl font-bold text-accent-gold text-center mb-6">Вывод денег из 7К казино</h1>
+      <p class="text-text-secondary text-base text-center mb-8">Все методы вывода, реальные сроки и лимиты. Без скрытых условий.</p>
+
+      <!-- Table -->
+      <div class="overflow-x-auto mb-8">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-bg-card text-accent-gold">
+              <th class="px-4 py-3 text-left font-semibold">Метод</th>
+              <th class="px-4 py-3 text-left font-semibold">Мин.</th>
+              <th class="px-4 py-3 text-left font-semibold">Макс.</th>
+              <th class="px-4 py-3 text-left font-semibold">Срок</th>
+              <th class="px-4 py-3 text-left font-semibold">Комиссия</th>
+            </tr>
+          </thead>
+          <tbody>
+            {paymentsData.methods.map(method => (
+              <tr class="border-b border-border hover:bg-bg-card/50">
+                <td class="px-4 py-3 text-white font-semibold">{method.name}</td>
+                <td class="px-4 py-3 text-text-secondary">{method.minWithdraw}</td>
+                <td class="px-4 py-3 text-text-secondary">{method.maxWithdraw}</td>
+                <td class="px-4 py-3 text-text-secondary">{method.withdrawTime}</td>
+                <td class="px-4 py-3 text-text-secondary">{method.commission}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Notes per method -->
+      <h2 class="text-xl font-bold text-accent-gold mb-4">Особенности каждого метода</h2>
+      <div class="space-y-3 mb-10">
+        {paymentsData.methods.map(method => (
+          <div class="bg-bg-card rounded-xl p-5">
+            <p class="text-white font-semibold text-sm mb-2">{method.name}</p>
+            <p class="text-text-muted text-xs">{method.note}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Verification -->
+      <h2 class="text-xl font-bold text-accent-gold mb-4">Верификация аккаунта</h2>
+      <div class="bg-bg-card rounded-xl p-6 mb-8">
+        <p class="text-text-secondary text-sm mb-4"><strong class="text-white">Когда потребуется:</strong> {paymentsData.verification.when}</p>
+        
+        <p class="text-white font-semibold text-sm mb-2">Какие документы нужны:</p>
+        <ul class="space-y-2 mb-4">
+          {paymentsData.verification.documents.map(doc => (
+            <li class="text-text-muted text-sm flex items-start gap-2">
+              <span class="text-accent-gold">→</span>
+              <span>{doc}</span>
+            </li>
+          ))}
+        </ul>
+
+        <p class="text-text-secondary text-sm mb-2"><strong class="text-white">Срок проверки:</strong> {paymentsData.verification.time}</p>
+        <p class="text-accent-gold text-xs mt-3 italic">{paymentsData.verification.tip}</p>
+      </div>
+
+      <!-- What to do if delayed -->
+      <h2 class="text-xl font-bold text-accent-gold mb-4">Что делать, если вывод задерживается</h2>
+      <div class="bg-bg-card rounded-xl p-6 mb-8">
+        <ol class="space-y-3 text-text-secondary text-sm list-decimal list-inside">
+          <li>Проверьте статус заявки в личном кабинете → раздел «История транзакций»</li>
+          <li>Убедитесь, что верификация пройдена (если требовалась)</li>
+          <li>Проверьте, нет ли активного бонуса с невыполненным вейджером — вывод блокируется до отыгрыша</li>
+          <li>Если прошло более 24 часов — напишите в поддержку через онлайн-чат или Telegram</li>
+          <li>Укажите номер заявки — это ускорит обработку</li>
+        </ol>
+      </div>
+
+      <!-- Common reasons for rejection -->
+      <h2 class="text-xl font-bold text-accent-gold mb-4">Почему могут отклонить вывод</h2>
+      <div class="bg-bg-card rounded-xl p-6 mb-8">
+        <ul class="space-y-3 text-text-secondary text-sm">
+          <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Не пройдена верификация при сумме свыше 20 000 ₽</li>
+          <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Активный бонус с незавершённым вейджером</li>
+          <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Подозрение на мультиаккаунт или фрод</li>
+          <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Вывод на реквизиты, отличные от тех, с которых пополняли</li>
+          <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Сумма ниже минимального лимита</li>
+        </ul>
+      </div>
+
+      <div class="text-center">
+        <CTA text="Перейти в казино" href={ctaUrl} />
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

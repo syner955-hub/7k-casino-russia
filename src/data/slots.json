@@ -1,0 +1,52 @@
+{
+  "slots": [
+    {
+      "name": "Sweet Bonanza",
+      "provider": "Pragmatic Play",
+      "rtp": "96.5%",
+      "volatility": "Высокая",
+      "image": "/img/slot1.png",
+      "features": "Множители до x100, каскадные выигрыши"
+    },
+    {
+      "name": "Book of Dead",
+      "provider": "Play'n GO",
+      "rtp": "96.2%",
+      "volatility": "Высокая",
+      "image": "/img/slot2.png",
+      "features": "Расширяющийся символ, фриспины"
+    },
+    {
+      "name": "Gates of Olympus",
+      "provider": "Pragmatic Play",
+      "rtp": "96.5%",
+      "volatility": "Высокая",
+      "image": "/img/slot3.png",
+      "features": "Множители, scatter pays"
+    },
+    {
+      "name": "Starburst",
+      "provider": "NetEnt",
+      "rtp": "96.1%",
+      "volatility": "Низкая",
+      "image": "/img/slot4.png",
+      "features": "Расширяющийся Wild, респины"
+    },
+    {
+      "name": "Razor Shark",
+      "provider": "Push Gaming",
+      "rtp": "96.7%",
+      "volatility": "Высокая",
+      "image": "/img/slot5.png",
+      "features": "Mystery Stacks, множители"
+    },
+    {
+      "name": "Lucky Streak",
+      "provider": "Endorphina",
+      "rtp": "96.0%",
+      "volatility": "Средняя",
+      "image": "/img/slot6.png",
+      "features": "Классический слот, риск-игра"
+    }
+  ]
+}

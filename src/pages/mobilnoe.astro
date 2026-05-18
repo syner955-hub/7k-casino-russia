@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTA from '../components/CTA.astro';
+
+const title = 'Мобильная версия 7К Казино — приложение для Android и iOS';
+const description = 'Мобильная версия 7К Казино и APK-приложение для Android. Сравнение, как скачать, как установить. Полный доступ к играм с телефона.';
+const ctaUrl = '/go/';
+---
+
+<BaseLayout title={title} description={description} canonical="https://7k-casino-russia.it.com/mobilnoe/">
+  <Header slot="header" />
+
+  <section class="py-10 px-4">
+    <div class="max-w-[900px] mx-auto">
+      <h1 class="text-3xl md:text-4xl font-bold text-accent-gold text-center mb-6">Мобильная версия 7К казино</h1>
+      <p class="text-text-secondary text-base text-center mb-8">Два способа играть с телефона: мобильный сайт или APK-приложение. Разбираем разницу.</p>
+
+      <!-- Comparison table -->
+      <h2 class="text-xl font-bold text-accent-gold mb-4">Мобильный сайт vs APK-приложение</h2>
+      <div class="overflow-x-auto mb-8">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-bg-card text-accent-gold">
+              <th class="px-4 py-3 text-left font-semibold">Параметр</th>
+              <th class="px-4 py-3 text-left font-semibold">Мобильный сайт</th>
+              <th class="px-4 py-3 text-left font-semibold">APK-приложение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-border">
+              <td class="px-4 py-3 text-white font-semibold">Установка</td>
+              <td class="px-4 py-3 text-text-secondary">Не нужна, открывается в браузере</td>
+              <td class="px-4 py-3 text-text-secondary">Скачать APK и установить вручную</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="px-4 py-3 text-white font-semibold">Обновления</td>
+              <td class="px-4 py-3 text-text-secondary">Автоматически (сервер)</td>
+              <td class="px-4 py-3 text-text-secondary">Нужно скачивать новую версию</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="px-4 py-3 text-white font-semibold">Скорость</td>
+              <td class="px-4 py-3 text-text-secondary">Зависит от интернета</td>
+              <td class="px-4 py-3 text-text-secondary">Чуть быстрее за счёт кэша</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="px-4 py-3 text-white font-semibold">Push-уведомления</td>
+              <td class="px-4 py-3 text-text-secondary">Нет</td>
+              <td class="px-4 py-3 text-text-secondary">Да (акции, бонусы)</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="px-4 py-3 text-white font-semibold">Память телефона</td>
+              <td class="px-4 py-3 text-text-secondary">Не занимает</td>
+              <td class="px-4 py-3 text-text-secondary">~50 МБ</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="px-4 py-3 text-white font-semibold">Блокировки</td>
+              <td class="px-4 py-3 text-text-secondary">Нужно зеркало при блокировке</td>
+              <td class="px-4 py-3 text-text-secondary">Работает независимо от блокировок</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="px-4 py-3 text-white font-semibold">iOS</td>
+              <td class="px-4 py-3 text-text-secondary">Полная поддержка</td>
+              <td class="px-4 py-3 text-text-secondary">Только через Safari (PWA)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Recommendation -->
+      <div class="bg-gradient-to-r from-accent-red/10 to-accent-red-dark/10 border border-accent-red/20 rounded-xl p-5 mb-8">
+        <p class="text-accent-gold font-semibold text-sm mb-2">Рекомендация:</p>
+        <p class="text-text-secondary text-sm">Для большинства игроков мобильный сайт — оптимальный вариант: не нужно ничего устанавливать, всегда актуальная версия. APK стоит скачать, если вы играете часто и хотите push-уведомления о бонусах, или если ваш провайдер блокирует сайт.</p>
+      </div>
+
+      <!-- How to install APK -->
+      <h2 class="text-xl font-bold text-accent-gold mb-4">Как установить APK на Android</h2>
+      <div class="space-y-3 mb-8">
+        <div class="bg-bg-card rounded-xl p-5 flex items-start gap-4">
+          <span class="bg-gradient-to-b from-accent-red to-accent-red-dark text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">1</span>
+          <div>
+            <p class="text-white font-semibold text-sm mb-1">Разрешите установку из неизвестных источников</p>
+            <p class="text-text-muted text-xs">Настройки → Безопасность → «Неизвестные источники» (или разрешите для браузера)</p>
+          </div>
+        </div>
+        <div class="bg-bg-card rounded-xl p-5 flex items-start gap-4">
+          <span class="bg-gradient-to-b from-accent-red to-accent-red-dark text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">2</span>
+          <div>
+            <p class="text-white font-semibold text-sm mb-1">Скачайте APK с официального сайта</p>
+            <p class="text-text-muted text-xs">Кнопка «Скачать» находится в шапке или подвале сайта. Не скачивайте APK из сторонних источников.</p>
+          </div>
+        </div>
+        <div class="bg-bg-card rounded-xl p-5 flex items-start gap-4">
+          <span class="bg-gradient-to-b from-accent-red to-accent-red-dark text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">3</span>
+          <div>
+            <p class="text-white font-semibold text-sm mb-1">Откройте скачанный файл и установите</p>
+            <p class="text-text-muted text-xs">Нажмите «Установить» в появившемся окне. Установка занимает 10-15 секунд.</p>
+          </div>
+        </div>
+        <div class="bg-bg-card rounded-xl p-5 flex items-start gap-4">
+          <span class="bg-gradient-to-b from-accent-red to-accent-red-dark text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0">4</span>
+          <div>
+            <p class="text-white font-semibold text-sm mb-1">Войдите в аккаунт</p>
+            <p class="text-text-muted text-xs">Используйте те же логин и пароль, что и на сайте. Баланс и бонусы синхронизируются.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- iOS note -->
+      <h2 class="text-xl font-bold text-accent-gold mb-4">Для iPhone (iOS)</h2>
+      <div class="bg-bg-card rounded-xl p-5 mb-8">
+        <p class="text-text-secondary text-sm">APK-файлы не поддерживаются на iOS. Вместо этого:</p>
+        <ol class="space-y-2 text-text-muted text-sm list-decimal list-inside mt-3">
+          <li>Откройте сайт 7К казино в Safari</li>
+          <li>Нажмите кнопку «Поделиться» (квадрат со стрелкой)</li>
+          <li>Выберите «На экран Домой»</li>
+          <li>Иконка появится на рабочем столе — работает как приложение</li>
+        </ol>
+      </div>
+
+      <div class="text-center">
+        <CTA text="Открыть мобильную версию" href={ctaUrl} />
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

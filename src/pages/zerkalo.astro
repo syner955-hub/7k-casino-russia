@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTA from '../components/CTA.astro';
+import mirrorsData from '../data/mirrors.json';
+
+const title = 'Зеркало 7К Казино — рабочее зеркало 7K Casino на сегодня 2026';
+const description = 'Актуальное рабочее зеркало 7К Казино на сегодня. Как найти зеркало, почему блокируют, как отличить от фейка. Прямой доступ к 7K Casino.';
+const ctaUrl = '/go/';
+---
+
+<BaseLayout title={title} description={description} canonical="https://7k-casino-russia.it.com/zerkalo/">
+  <Header slot="header" />
+
+  <section class="py-10 px-4">
+    <div class="max-w-[900px] mx-auto">
+      <h1 class="text-3xl md:text-4xl font-bold text-accent-gold text-center mb-6">Рабочее зеркало 7К казино на сегодня</h1>
+      
+      <p class="text-text-secondary text-base text-center mb-8">Если основной сайт 7К казино недоступен — используйте зеркало. Это точная копия сайта: баланс, бонусы и история сохраняются.</p>
+
+      <!-- Active mirror -->
+      <div class="bg-bg-card rounded-xl p-6 mb-8 text-center">
+        <p class="text-text-muted text-sm mb-3">Актуальное зеркало (проверено {mirrorsData.mirrors[0].updated}):</p>
+        <p class="text-accent-gold text-2xl font-bold mb-4">{mirrorsData.mirrors[0].url}</p>
+        <CTA text="Перейти на зеркало" href={ctaUrl} />
+      </div>
+
+      <!-- Why mirrors change -->
+      <h2 class="text-xl font-bold text-accent-gold mb-4">Почему зеркала меняются</h2>
+      <p class="text-text-secondary text-sm mb-6">{mirrorsData.whyMirrorsChange}</p>
+
+      <!-- How to find -->
+      <h2 class="text-xl font-bold text-accent-gold mb-4">Как найти актуальное зеркало</h2>
+      <ul class="space-y-3 mb-8">
+        {mirrorsData.howToFind.map(item => (
+          <li class="flex items-start gap-3 text-text-secondary text-sm">
+            <span class="text-accent-gold shrink-0">→</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Official vs Fake -->
+      <h2 class="text-xl font-bold text-accent-gold mb-4">Как отличить настоящее зеркало от фейка</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <div class="bg-bg-card rounded-xl p-5">
+          <h3 class="text-green-400 font-semibold text-sm mb-3">Настоящее зеркало:</h3>
+          <ul class="space-y-2">
+            {mirrorsData.signs.official.map(sign => (
+              <li class="text-text-muted text-xs flex items-start gap-2">
+                <span class="text-green-400">✓</span>
+                <span>{sign}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-bg-card rounded-xl p-5">
+          <h3 class="text-red-400 font-semibold text-sm mb-3">Фейковый сайт:</h3>
+          <ul class="space-y-2">
+            {mirrorsData.signs.fake.map(sign => (
+              <li class="text-text-muted text-xs flex items-start gap-2">
+                <span class="text-red-400">✗</span>
+                <span>{sign}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- What to do if blocked -->
+      <h2 class="text-xl font-bold text-accent-gold mb-4">Что делать, если зеркало тоже не открывается</h2>
+      <div class="bg-bg-card rounded-xl p-5">
+        <ol class="space-y-3 text-text-secondary text-sm list-decimal list-inside">
+          <li>Смените DNS на 1.1.1.1 (Cloudflare) или 8.8.8.8 (Google) в настройках Wi-Fi</li>
+          <li>Используйте VPN — подойдёт любой бесплатный с выходом через Нидерланды или Германию</li>
+          <li>Откройте сайт через Tor Browser</li>
+          <li>Напишите в поддержку через Telegram — вам пришлют свежую ссылку</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

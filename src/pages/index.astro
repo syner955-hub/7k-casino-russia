@@ -1,0 +1,275 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SlotCard from '../components/SlotCard.astro';
+import FAQ from '../components/FAQ.astro';
+import CTA from '../components/CTA.astro';
+
+import slotsData from '../data/slots.json';
+import bonusesData from '../data/bonuses.json';
+import paymentsData from '../data/payments.json';
+import mirrorsData from '../data/mirrors.json';
+
+const title = '7К Казино — официальный сайт: вход и регистрация | 7K Casino';
+const description = 'Официальный сайт 7К Казино. Вход и регистрация в 7K Casino. Рабочее зеркало, бонусы до 100% + 100 FS, вывод от 15 минут. Лицензия Curacao.';
+const ctaUrl = '/go/';
+
+const faqItems = [
+  {
+    question: 'Что делать, если сайт 7К казино не открывается?',
+    answer: 'Используйте актуальное зеркало с этой страницы или подпишитесь на Telegram-канал 7К, где публикуются свежие ссылки. Также можно использовать VPN или сменить DNS на 1.1.1.1 (Cloudflare) или 8.8.8.8 (Google).'
+  },
+  {
+    question: 'Можно ли играть без верификации?',
+    answer: 'Да, играть и пополнять счёт можно без верификации. Она потребуется при первом выводе свыше 20 000 ₽ или при подозрении на мультиаккаунт. Рекомендуем пройти верификацию сразу — это ускорит будущие выводы.'
+  },
+  {
+    question: 'Какой минимальный вывод из 7К казино?',
+    answer: 'Минимальная сумма вывода — 500 ₽ (или 10 USD). Для криптовалюты — эквивалент 1 000 ₽. Вывод обрабатывается от 15 минут до 24 часов в зависимости от метода.'
+  },
+  {
+    question: 'Блокирует ли банк переводы из казино?',
+    answer: 'Некоторые банки РФ могут отклонять транзакции. В этом случае используйте СБП (работает через большинство банков), криптовалюту (USDT TRC-20 — самый быстрый вариант) или электронные кошельки.'
+  },
+  {
+    question: 'Как отменить бонус в 7К казино?',
+    answer: 'Бонус можно отменить в личном кабинете в разделе «Бонусы» до начала отыгрыша. После первой ставки с бонусными средствами отмена невозможна — придётся отыграть вейджер или потерять бонусный баланс.'
+  },
+  {
+    question: 'Работает ли 7К казино с криптовалютой из РФ?',
+    answer: 'Да. Поддерживаются BTC, ETH, USDT (TRC-20 и ERC-20), LTC. Крипто-депозиты не зависят от банковских ограничений. USDT TRC-20 — оптимальный вариант: низкая комиссия сети и быстрое подтверждение.'
+  }
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="py-5 px-4">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="relative rounded-2xl overflow-hidden bg-cover bg-center min-h-[320px] md:min-h-[400px]" style="background-image: url('/img/bg-1.png');">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/20"></div>
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 p-8 md:p-12">
+          <div class="flex-1 max-w-lg">
+            <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4">7К Казино — официальный сайт</h1>
+            <p class="text-text-secondary text-base mb-6">Вход и регистрация. Бонус 100% + 100 FS на первый депозит.</p>
+            <div class="flex flex-wrap gap-3">
+              <CTA text="Регистрация" href={ctaUrl} />
+              <CTA text="Вход" href={ctaUrl} primary={false} />
+            </div>
+          </div>
+          <div class="hidden md:block max-w-[300px]">
+            <img src="/img/bg-2.png" alt="7K Casino" class="w-full h-auto drop-shadow-2xl" width="300" height="300">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust signals -->
+  <section class="py-8 px-4" id="about">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-bg-card rounded-xl p-5 border border-border">
+          <p class="text-accent-gold font-semibold text-sm mb-2">Лицензия Curacao</p>
+          <p class="text-text-muted text-xs">№ 8048/JAZ2021-047 (Antillephone N.V.) — международный регулятор с 1996 года</p>
+        </div>
+        <div class="bg-bg-card rounded-xl p-5 border border-border">
+          <p class="text-accent-gold font-semibold text-sm mb-2">Вывод от 15 минут</p>
+          <p class="text-text-muted text-xs">СБП, карты, крипто. Минимум 500 ₽. Без скрытых комиссий.</p>
+        </div>
+        <div class="bg-bg-card rounded-xl p-5 border border-border">
+          <p class="text-accent-gold font-semibold text-sm mb-2">7000+ игр</p>
+          <p class="text-text-muted text-xs">Pragmatic Play, NetEnt, Evolution, Play'n GO и 200+ провайдеров</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to identify official site -->
+  <section class="py-10 px-4">
+    <div class="max-w-[1280px] mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-accent-gold text-center mb-8">Как отличить официальный сайт 7К от подделки</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-bg-card rounded-xl p-6">
+          <h3 class="text-accent-gold font-semibold mb-4">Признаки настоящего сайта</h3>
+          <ul class="space-y-3">
+            {mirrorsData.signs.official.map(sign => (
+              <li class="flex items-start gap-3 text-text-secondary text-sm">
+                <span class="text-green-400 shrink-0 mt-0.5">✓</span>
+                <span>{sign}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-bg-card rounded-xl p-6">
+          <h3 class="text-accent-gold font-semibold mb-4">Красные флаги фейков</h3>
+          <ul class="space-y-3">
+            {mirrorsData.signs.fake.map(sign => (
+              <li class="flex items-start gap-3 text-text-secondary text-sm">
+                <span class="text-red-400 shrink-0 mt-0.5">✗</span>
+                <span>{sign}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mirror section -->
+  <section class="py-10 px-4">
+    <div class="max-w-[1280px] mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-accent-gold text-center mb-6">Рабочее зеркало 7К казино 2026</h2>
+      <div class="bg-bg-card rounded-xl p-6 max-w-2xl mx-auto">
+        <p class="text-text-secondary text-sm mb-4">{mirrorsData.whyMirrorsChange}</p>
+        <div class="bg-bg-primary rounded-lg p-4 mb-4">
+          {mirrorsData.mirrors.map(mirror => (
+            <div class="flex items-center justify-between">
+              <span class="text-white font-semibold">{mirror.url}</span>
+              <span class="text-green-400 text-xs font-semibold px-2 py-1 bg-green-400/10 rounded">Активно</span>
+            </div>
+          ))}
+        </div>
+        <h3 class="text-accent-gold text-sm font-semibold mb-2">Как найти актуальное зеркало:</h3>
+        <ul class="space-y-2">
+          {mirrorsData.howToFind.map(item => (
+            <li class="text-text-muted text-sm flex items-start gap-2">
+              <span class="text-accent-gold">→</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bonuses -->
+  <section class="py-10 px-4">
+    <div class="max-w-[1280px] mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-accent-gold text-center mb-8">Бонусы 7К казино — условия и ограничения</h2>
+      
+      <!-- Promo code -->
+      <div class="bg-gradient-to-r from-accent-red/20 to-accent-red-dark/20 border border-accent-red/30 rounded-xl p-5 max-w-2xl mx-auto mb-8 text-center">
+        <p class="text-text-secondary text-sm mb-2">Промокод при регистрации:</p>
+        <p class="text-accent-gold text-2xl font-bold tracking-wider">{bonusesData.promoCode}</p>
+        <p class="text-text-muted text-xs mt-2">{bonusesData.promoCodeBonus}</p>
+      </div>
+
+      <!-- Bonus table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-bg-card text-accent-gold">
+              <th class="px-4 py-3 text-left font-semibold">Бонус</th>
+              <th class="px-4 py-3 text-left font-semibold">Размер</th>
+              <th class="px-4 py-3 text-left font-semibold">Вейджер</th>
+              <th class="px-4 py-3 text-left font-semibold">Макс. ставка</th>
+              <th class="px-4 py-3 text-left font-semibold">Срок</th>
+            </tr>
+          </thead>
+          <tbody>
+            {bonusesData.bonuses.map(bonus => (
+              <tr class="border-b border-border hover:bg-bg-card/50">
+                <td class="px-4 py-3 text-white font-semibold">{bonus.name}</td>
+                <td class="px-4 py-3 text-text-secondary">{bonus.amount}</td>
+                <td class="px-4 py-3 text-text-secondary">{bonus.wager}</td>
+                <td class="px-4 py-3 text-text-secondary">{bonus.maxBet}</td>
+                <td class="px-4 py-3 text-text-secondary">{bonus.expiry}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payments -->
+  <section class="py-10 px-4" id="payments">
+    <div class="max-w-[1280px] mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-accent-gold text-center mb-8">Вывод денег из 7К казино</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-bg-card text-accent-gold">
+              <th class="px-4 py-3 text-left font-semibold">Метод</th>
+              <th class="px-4 py-3 text-left font-semibold">Мин. вывод</th>
+              <th class="px-4 py-3 text-left font-semibold">Макс. вывод</th>
+              <th class="px-4 py-3 text-left font-semibold">Срок</th>
+              <th class="px-4 py-3 text-left font-semibold">Комиссия</th>
+            </tr>
+          </thead>
+          <tbody>
+            {paymentsData.methods.map(method => (
+              <tr class="border-b border-border hover:bg-bg-card/50">
+                <td class="px-4 py-3 text-white font-semibold">{method.name}</td>
+                <td class="px-4 py-3 text-text-secondary">{method.minWithdraw}</td>
+                <td class="px-4 py-3 text-text-secondary">{method.maxWithdraw}</td>
+                <td class="px-4 py-3 text-text-secondary">{method.withdrawTime}</td>
+                <td class="px-4 py-3 text-text-secondary">{method.commission}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Verification block -->
+      <div class="bg-bg-card rounded-xl p-6 mt-6 max-w-2xl mx-auto">
+        <h3 class="text-accent-gold font-semibold mb-3">Верификация</h3>
+        <p class="text-text-muted text-sm mb-3"><strong class="text-white">Когда потребуется:</strong> {paymentsData.verification.when}</p>
+        <p class="text-text-muted text-sm mb-2"><strong class="text-white">Документы:</strong></p>
+        <ul class="space-y-1 mb-3">
+          {paymentsData.verification.documents.map(doc => (
+            <li class="text-text-muted text-sm pl-4">— {doc}</li>
+          ))}
+        </ul>
+        <p class="text-text-muted text-sm"><strong class="text-white">Срок проверки:</strong> {paymentsData.verification.time}</p>
+        <p class="text-accent-gold text-xs mt-3 italic">{paymentsData.verification.tip}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Games -->
+  <section class="py-10 px-4" id="games">
+    <div class="max-w-[1280px] mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-accent-gold text-center mb-8">Игровые автоматы 7К</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {slotsData.slots.map(slot => (
+          <SlotCard name={slot.name} provider={slot.provider} rtp={slot.rtp} image={slot.image} features={slot.features} />
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <CTA text="Все игры" href={ctaUrl} />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-10 px-4" id="faq">
+    <div class="max-w-[1280px] mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-accent-gold text-center mb-8">Часто задаваемые вопросы</h2>
+      <div class="max-w-3xl mx-auto">
+        {faqItems.map(item => (
+          <FAQ question={item.question} answer={item.answer} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isActive = item?.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!isActive) {
+        item?.classList.add('active');
+      }
+    });
+  });
+</script>

@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTA from '../components/CTA.astro';
+import bonusesData from '../data/bonuses.json';
+
+const title = 'Бонусы 7К Казино — промокоды, фриспины, кешбэк 2026';
+const description = 'Все бонусы 7К Казино: приветственный пакет 100% + 100 FS, кешбэк до 20%, промокод 7KPROMO2025. Условия отыгрыша, вейджер, ограничения.';
+const ctaUrl = '/go/';
+---
+
+<BaseLayout title={title} description={description} canonical="https://7k-casino-russia.it.com/bonusy/">
+  <Header slot="header" />
+
+  <section class="py-10 px-4">
+    <div class="max-w-[900px] mx-auto">
+      <h1 class="text-3xl md:text-4xl font-bold text-accent-gold text-center mb-6">Бонусы 7К казино — полные условия</h1>
+
+      <!-- Promo code -->
+      <div class="bg-gradient-to-r from-accent-red/20 to-accent-red-dark/20 border border-accent-red/30 rounded-xl p-6 mb-8 text-center">
+        <p class="text-text-secondary text-sm mb-2">Промокод при регистрации:</p>
+        <p class="text-accent-gold text-3xl font-bold tracking-wider mb-2">{bonusesData.promoCode}</p>
+        <p class="text-text-muted text-sm">{bonusesData.promoCodeBonus}</p>
+      </div>
+
+      <!-- Each bonus detailed -->
+      {bonusesData.bonuses.map(bonus => (
+        <div class="bg-bg-card rounded-xl p-6 mb-4">
+          <h2 class="text-xl font-bold text-accent-gold mb-4">{bonus.name}</h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+            <div>
+              <p class="text-text-dim text-xs">Размер</p>
+              <p class="text-white font-semibold text-sm">{bonus.amount}</p>
+            </div>
+            <div>
+              <p class="text-text-dim text-xs">Вейджер</p>
+              <p class="text-white font-semibold text-sm">{bonus.wager}</p>
+            </div>
+            <div>
+              <p class="text-text-dim text-xs">Макс. ставка</p>
+              <p class="text-white font-semibold text-sm">{bonus.maxBet}</p>
+            </div>
+            <div>
+              <p class="text-text-dim text-xs">Срок отыгрыша</p>
+              <p class="text-white font-semibold text-sm">{bonus.expiry}</p>
+            </div>
+            <div>
+              <p class="text-text-dim text-xs">Фриспины</p>
+              <p class="text-white font-semibold text-sm">{bonus.freespins}</p>
+            </div>
+            <div>
+              <p class="text-text-dim text-xs">Мин. депозит</p>
+              <p class="text-white font-semibold text-sm">{bonus.minDeposit}</p>
+            </div>
+          </div>
+          <p class="text-text-muted text-xs border-t border-border pt-3">{bonus.notes}</p>
+        </div>
+      ))}
+
+      <!-- When bonus is not worth it -->
+      <div class="bg-bg-card rounded-xl p-6 mt-8">
+        <h2 class="text-xl font-bold text-accent-gold mb-4">Когда бонус невыгоден</h2>
+        <ul class="space-y-3 text-text-secondary text-sm">
+          <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Если вы планируете вывести деньги быстро — вейджер x35 означает, что с депозита 1000 ₽ нужно прокрутить 70 000 ₽ ставками</li>
+          <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Если играете в слоты с низким RTP — отыгрыш займёт больше средств</li>
+          <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Если макс. ставка 500 ₽ вас ограничивает — при крупных ставках бонус аннулируется</li>
+        </ul>
+        <p class="text-accent-gold text-xs mt-4 italic">Совет: если не уверены — откажитесь от бонуса и играйте на свои. Вывод без вейджера быстрее и проще.</p>
+      </div>
+
+      <div class="text-center mt-8">
+        <CTA text="Получить бонус" href={ctaUrl} />
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

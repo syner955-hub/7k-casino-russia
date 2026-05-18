@@ -1,0 +1,22 @@
+---
+const { question, answer } = Astro.props;
+---
+
+<div class="faq-item bg-bg-card mb-0.5 overflow-hidden">
+  <button class="faq-question w-full flex items-center gap-4 px-6 py-5 cursor-pointer hover:bg-bg-card-hover transition-colors text-left">
+    <h3 class="flex-1 text-accent-gold text-base font-semibold">{question}</h3>
+    <span class="faq-toggle text-accent-gold text-2xl shrink-0 transition-transform">+</span>
+  </button>
+  <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6">
+    <p class="text-text-muted text-sm leading-relaxed pb-5">{answer}</p>
+  </div>
+</div>
+
+<style>
+  .faq-item.active .faq-answer {
+    max-height: 500px;
+  }
+  .faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+  }
+</style>
