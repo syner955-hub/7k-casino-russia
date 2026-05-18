@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Раскрытие информации — 7К Казино';
+const description = 'Информация о партнёрских отношениях и монетизации сайта 7k-casino-russia.it.com. Прозрачность и честность.';
+---
+
+<BaseLayout title={title} description={description} canonical="https://7k-casino-russia.it.com/disclosure/">
+  <Header slot="header" />
+
+  <section class="py-10 px-4">
+    <div class="max-w-[800px] mx-auto">
+      <h1 class="text-2xl font-bold text-accent-gold mb-6">Раскрытие информации</h1>
+      <p class="text-text-muted text-xs mb-6">Последнее обновление: 18 мая 2026 г.</p>
+
+      <div class="space-y-6 text-text-secondary text-sm leading-relaxed">
+        <div>
+          <h2 class="text-lg font-semibold text-white mb-2">Партнёрские отношения</h2>
+          <p>Сайт 7k-casino-russia.it.com является независимым информационным ресурсом. Мы сотрудничаем с онлайн-казино 7К на партнёрской основе и получаем вознаграждение за регистрации пользователей, перешедших по ссылкам с нашего сайта.</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white mb-2">Как это работает</h2>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Кнопки «Регистрация», «Вход», «Играть» и другие CTA-элементы содержат партнёрские ссылки</li>
+            <li>При переходе по этим ссылкам и регистрации в казино мы получаем комиссию</li>
+            <li>Для пользователя это <strong class="text-white">бесплатно</strong> — стоимость услуг казино не увеличивается</li>
+            <li>Партнёрское вознаграждение позволяет нам поддерживать сайт и обновлять информацию</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white mb-2">Влияет ли это на контент</h2>
+          <p>Партнёрские отношения <strong class="text-white">не влияют</strong> на объективность информации. Мы публикуем как положительные, так и отрицательные аспекты (условия вейджера, ограничения вывода, причины отказа). Наша цель — предоставить полную и честную информацию для принятия решения.</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white mb-2">Что мы гарантируем</h2>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Все данные о бонусах, лимитах и условиях проверяются и обновляются</li>
+            <li>Мы указываем ограничения и подводные камни, а не только преимущества</li>
+            <li>Расчёты отыгрыша бонусов основаны на реальной математике</li>
+            <li>Информация о платёжных методах актуальна для пользователей из РФ</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white mb-2">Контакт</h2>
+          <p>Если у вас есть вопросы о наших партнёрских отношениях: <a href="mailto:support@7k-casino-russia.it.com" class="text-accent-gold">support@7k-casino-russia.it.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Ответственная игра — 7К Казино';
+const description = 'Информация об ответственной игре. Признаки зависимости, как получить помощь, самоисключение и лимиты.';
+---
+
+<BaseLayout title={title} description={description} canonical="https://7k-casino-russia.it.com/responsible-gambling/">
+  <Header slot="header" />
+
+  <section class="py-10 px-4">
+    <div class="max-w-[800px] mx-auto">
+      <h1 class="text-2xl font-bold text-accent-gold mb-6">Ответственная игра</h1>
+
+      <div class="space-y-6 text-text-secondary text-sm leading-relaxed">
+        <div class="bg-gradient-to-r from-accent-red/10 to-accent-red-dark/10 border border-accent-red/20 rounded-xl p-5">
+          <p class="text-white font-semibold text-base mb-2">Азартные игры должны быть развлечением, а не источником дохода.</p>
+          <p>Если вы чувствуете, что теряете контроль над игрой — остановитесь и обратитесь за помощью.</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white mb-2">Признаки игровой зависимости</h2>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Вы тратите на игру больше, чем можете позволить себе потерять</li>
+            <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Вы пытаетесь отыграться после проигрыша</li>
+            <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Вы занимаете деньги для игры</li>
+            <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Игра мешает работе, учёбе или отношениям</li>
+            <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Вы скрываете от близких, сколько тратите на игру</li>
+            <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Вы чувствуете тревогу или раздражение, когда не играете</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white mb-2">Правила безопасной игры</h2>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Установите лимит на депозит и не превышайте его</li>
+            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Определите время для игры заранее</li>
+            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Не играйте в состоянии стресса или алкогольного опьянения</li>
+            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Воспринимайте проигрыш как плату за развлечение</li>
+            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Никогда не играйте на последние деньги</li>
+            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Делайте перерывы</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white mb-2">Инструменты самоконтроля в 7К казино</h2>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong class="text-white">Лимиты депозита</strong> — установите дневной, недельный или месячный лимит в личном кабинете</li>
+            <li><strong class="text-white">Тайм-аут</strong> — временная блокировка аккаунта на 24 часа, 7 дней или 30 дней</li>
+            <li><strong class="text-white">Самоисключение</strong> — полная блокировка аккаунта на срок от 6 месяцев до бессрочной</li>
+            <li><strong class="text-white">История ставок</strong> — отслеживайте свои расходы в разделе «Транзакции»</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white mb-2">Куда обратиться за помощью</h2>
+          <div class="bg-bg-card rounded-xl p-5 space-y-3">
+            <div>
+              <p class="text-white font-semibold">Gamblers Anonymous (международная)</p>
+              <p class="text-text-muted">www.gamblersanonymous.org</p>
+            </div>
+            <div>
+              <p class="text-white font-semibold">GamCare</p>
+              <p class="text-text-muted">www.gamcare.org.uk | Телефон: 0808 8020 133</p>
+            </div>
+            <div>
+              <p class="text-white font-semibold">BeGambleAware</p>
+              <p class="text-text-muted">www.begambleaware.org</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white mb-2">Защита несовершеннолетних</h2>
+          <p>Азартные игры запрещены для лиц младше 18 лет. Если вы подозреваете, что несовершеннолетний получил доступ к игровому аккаунту, немедленно обратитесь в службу поддержки казино для блокировки.</p>
+          <p class="mt-2">Рекомендуем использовать программы родительского контроля: Net Nanny, Cyber Patrol, CYBERsitter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
