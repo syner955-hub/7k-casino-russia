@@ -9,18 +9,26 @@ interface Props {
 
 const { title, description, canonical } = Astro.props;
 const siteUrl = 'https://7k-casino-russia.it.com';
+const xDefaultUrl = 'https://it.com';
+const currentPath = Astro.url.pathname;
+const canonicalUrl = canonical || `${siteUrl}${currentPath === '/' ? '/' : currentPath}`;
+const hreflangUrl = `${siteUrl}${currentPath === '/' ? '/' : currentPath}`;
+const xDefaultHref = `${xDefaultUrl}${currentPath === '/' ? '/' : currentPath}`;
 ---
 
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru-RU">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content={description}>
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <title>{title}</title>
   <link rel="icon" type="image/png" href="/favicon-48x48.png">
-  <link rel="canonical" href={canonical || siteUrl}>
+  <link rel="canonical" href={canonicalUrl}>
+  <link rel="alternate" hreflang="x-default" href={xDefaultHref}>
+  <link rel="alternate" hreflang="ru" href={hreflangUrl}>
+  <link rel="alternate" hreflang="ru-RU" href={hreflangUrl}>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,7 +36,7 @@ const siteUrl = 'https://7k-casino-russia.it.com';
   <meta property="og:type" content="website">
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
-  <meta property="og:url" content={canonical || siteUrl}>
+  <meta property="og:url" content={canonicalUrl}>
   <meta property="og:site_name" content="7К Казино">
   <meta property="og:image" content={`${siteUrl}/img/bg-1.png`}>
 </head>
