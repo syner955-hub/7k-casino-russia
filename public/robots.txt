@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /play/
+
+Sitemap: https://7k-casino-russia.it.com/sitemap-index.xml
+
+Host: 7k-casino-russia.it.com
